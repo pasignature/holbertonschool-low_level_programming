@@ -9,7 +9,7 @@ int main(void){
   int a;
   int b;
   int result;
-  result = add2nums(int a, int b);
+  result = add2nums(a, b);
   printf("%d", result);
   return (0);
 }
