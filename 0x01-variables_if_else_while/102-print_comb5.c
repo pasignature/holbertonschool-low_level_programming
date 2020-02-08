@@ -20,14 +20,14 @@ for (d = '0'; d <= '9'; d++)
 }
 if ((a < c) || (a == c && b < d))
 {
-putchar(a);
-putchar(b);
-putchar(' ');
-putchar(c);
-putchar(d);
+put(a);
+put(b);
+put(' ');
+put(c);
+put(d);
 if (!(a == '9' && b == '8'))
 }
-putchar(',');
+put(',');
 putchar(' ');
 }
 }
@@ -35,6 +35,6 @@ putchar(' ');
 }
 }
 }
-putchar('\n');
+put('\n');
 return (0);
 }
