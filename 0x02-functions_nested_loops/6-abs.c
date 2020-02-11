@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
-*_abs - returns absolute value of integer
-*
-* @a: int type
-*
-* Return: return absolute value of integer
-*/
+ *_abs - returns absolute value of integer
+ *
+ * @a: int type
+ *
+ * Return: return absolute value of integer
+ */
 
 int _abs(int a)
 {
