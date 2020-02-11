@@ -7,8 +7,8 @@
  * Return: 0
  */
 
-int convert_day(void);
-int print_remaining_days(void);
+int convert_day();
+int print_remaining_days();
 
 int main(void)
 {
