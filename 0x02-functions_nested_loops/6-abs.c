@@ -1,4 +1,7 @@
-# - compute the absolute value of an integer
+#include "holberton.h"
+
+/**
+*_abs - returns absolute value of integer
 *
 * @a: int type
 *
@@ -8,7 +11,6 @@
 int _abs(int a)
 {
 if (a < 0)
-return (a * -1);
-else
+a = -a;
 return (a);
 }
