@@ -1,51 +1,30 @@
 #include <stdio.h>
 
 /**
-* main - prints the first 98 number
+* main - prints the first 98 fibonacci numbers
 *
-* Description: fibobnachi numbers starting from one
+* Description: fibonacci numbers starting from one
 * Return: 0
-*/
+ */
 
-int main(void)
+int main()
 {
-long fib1, fib1a, fib1b, fib2, fib2a, fib2b, fib3, fib3a, fib3b;
-long divi = 10000000000;
+  int i, terms=98;
 
-fib1 = 0;
-fib2 = 1;
-int counter = 1;
+  /* Fibonacci magic initialization */
+  long int a = 1, b = 1, c = 1;
 
-for (counter = 0; counter < 91; counter++)
-{
-fib3 =  fib2 + fib1;
-fib1 = fib2;
-fib2 = fib3;
-printf("%ld, ", fib3);
-}
-fib1a = fib1 / divi;
-fib1b = fib1 % divi;
-fib2a = fib2 / divi;
-fib2b = fib2 % divi;
-for (; counter < 98; counter++)
-{
-fib3a = fib1a + fib2a;
-fib3b = fib1b + fib2b;
-if (fib3b > divi)
-{
-fib3b = fib3b % divi;
-fib3a++;
-}
-if (counter != 97)
-{
-printf("%ld%ld, ", fib3a, fib3b);
-fib1a = fib2a;
-fib1b = fib2b;
-fib2a = fib3a;
-fib2b = fib3b;
-}
-else
-printf("%ld%ld\n", fib3a, fib3b);
-}
-return (0);
+  printf("Fibonacci terms: \n");
+
+  /* Iterate through n terms */
+  for(i=1; i<=terms; i++)
+    {
+      printf("%lu, ", c);
+
+      a = b;     // Copy n-1 to n-2
+      b = c;     // Copy current to n-1
+      c = a + b; // New term
+    }
+
+  return 0;
 }
