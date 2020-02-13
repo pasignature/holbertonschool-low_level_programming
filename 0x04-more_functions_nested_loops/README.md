@@ -1,0 +1,1 @@
+# Function to determin if a given character is upper or not.
