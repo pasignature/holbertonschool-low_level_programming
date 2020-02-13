@@ -1,30 +1,29 @@
-#include <stdio.h>
-
 /**
-* main - prints the first 98 fibonacci numbers
-*
-* Description: fibonacci numbers starting from one
-* Return: 0
+ * C program to print first n Fibonacci numbers
+ * 
+ * Return: fibonacci series
  */
+ 
+#include <stdio.h> 
 
-int main()
-{
-  int i, terms=98;
+void printFibonacciNumbers(int n) 
+{ 
+long int f1 = 0, f2 = 1, i; 
 
-  /* Fibonacci magic initialization */
-  long int a = 1, b = 1, c = 1;
+if (n < 1) 
+return; 
 
-  printf("Fibonacci terms: \n");
+for (i = 1; i <= n; i++) 
+{ 
+printf("%lu ", f2); 
+int next = f1 + f2; 
+f1 = f2; 
+f2 = next; 
+} 
+} 
 
-  /* Iterate through n terms */
-  for(i=1; i<=terms; i++)
-    {
-      printf("%lu, ", c);
-
-      a = b;     // Copy n-1 to n-2
-      b = c;     // Copy current to n-1
-      c = a + b; // New term
-    }
-
-  return 0;
+int main() 
+{ 
+printFibonacciNumbers(88); 
+return 0; 
 }
