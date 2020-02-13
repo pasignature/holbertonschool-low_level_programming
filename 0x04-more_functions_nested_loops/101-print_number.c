@@ -33,9 +33,9 @@ for (count = 0; count < length; count++)
 {
 a = m;
 if (m < 0)
-_putchar(((m / power) * -1) + '0');
+_putchar(((m / power)*-1) + '0');
 else
-_putchar((m / power) + '0');
+_putchar((m / power)+'0');
 remainder = a % power;
 power /= 10;
 m = remainder;
