@@ -11,24 +11,22 @@
 
 int main(void)
 {
-  int sum = 0, i = 0, randnum;
+  int sum = 0, i = 0, r;
 
-  char a[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  char a[63] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   char password[100];
 
   srand(time(NULL));
 
-  while (sum < (2772 - 122))
+  while (sum < 2650)
     {
-      randnum = rand() % 62;
-      password[i] = a[randnum];
+      r = rand() % 62;
+      password[i] = a[r];
       sum = sum + password[i];
       i++;
     }
-  
-  r = 2772 - sum;
-  password[i] = r;
-  /* printf("%i\n%i\n%s\n",  randnum,sum,password); */
+
+  password[i] = 2772 - sum;
   printf("%s\n",  password);
   return (0);
 }
