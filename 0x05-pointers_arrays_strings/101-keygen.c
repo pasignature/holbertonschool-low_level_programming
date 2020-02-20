@@ -18,7 +18,7 @@ int main(void)
 
   srand(time(NULL));
 
-  while (sum < 2772)
+  while (sum < (2772 - 122))
     {
       randnum = rand() % 62;
       password[i] = a[randnum];
