@@ -26,7 +26,8 @@ int main(void)
       i++;
     }
   
-  password[i] = randnum - sum;
+  r = 2772 - sum;
+  password[i] = r;
   /* printf("%i\n%i\n%s\n",  randnum,sum,password); */
   printf("%s\n",  password);
   return (0);
