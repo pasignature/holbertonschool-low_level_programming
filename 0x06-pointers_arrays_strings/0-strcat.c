@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * _strcat - function to concatnate strings
  *
@@ -10,16 +12,22 @@
 
 char *_strcat(char *dest, char *src)
 {
-  int dest_len;
-  int a;
 
-  dest_len = _strlen(dest);
+int i, j;
 
-  for (a = 0 ; src[a] != '\0' ; a++)
-    dest[dest_len + a] = src[a];
+/* length of s1 is stored in i */
+for (i = 0; dest[i] != '\0'; ++i) {
 
-  dest[dest_len + a] = '\0';
+}
 
-  return (dest);
+/* concatenating each character of s2 to s1 */
+for (j = 0; src[j] != '\0'; ++j, ++i) {
+dest[i] = src[j];
+}
 
+/* terminating s1 string */
+dest[i] = '\0';
+
+/* returning concatenated string to main*/
+return (dest);
 }
