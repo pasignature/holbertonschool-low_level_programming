@@ -1,14 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - main function to print integers
- *
- * @n: int type
- * @a: array
- * @p: pointer
- * Return: return 0
- */
-
 int main(void)
 {
 	int n;
