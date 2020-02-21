@@ -1,4 +1,3 @@
-#include <string.h>
 #include "holberton.h"
 /**
  * _strncat - function to concatnate strings with n bytes
@@ -13,20 +12,21 @@
 char *_strncat(char *dest, char *src, int n)
 {
 
-int i, j, slen;
+	int i, j, slen;
 
-for (i = 0; dest[i] != '\0'; ++i)
-{
-}
+	slen = 0;
+	for (i = 0; dest[i] != '\0'; ++i)
+	{
+		slen = slen + 1;
+	}
 
-slen = strlen(src);
-if (n > slen)
-n = slen;
+	if (n > slen)
+		n = slen;
 
-for (j = 0; j < n && src[j] != '\0'; ++j, ++i)
-dest[i] = src[j];
+	for (j = 0; j < n && src[j] != '\0'; ++j, ++i)
+		dest[i] = src[j];
 
-dest[i] = '\0';
+	dest[i] = '\0';
 
-return (dest);
+	return (dest);
 }
