@@ -7,6 +7,7 @@
  *
  * Return: pointer to the newly allocated memory space containing a str copy
  */
+
 char *_strdup(char *str)
 {
 	unsigned int i, strlen;

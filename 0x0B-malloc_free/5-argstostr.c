@@ -28,7 +28,7 @@ if (p == NULL)
 return (NULL);
 }
 
-//for (i = 0, k = 0; k < total_len + ac; i++)
+for (i = 0, k = 0; k < total_len + ac; i++)
 {
 for (j = 0; av[i][j] != '\0'; j++, k++)
 {
