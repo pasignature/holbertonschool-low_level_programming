@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - program to multiply two numbers
@@ -10,10 +11,15 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc == 3)
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	if (argc != 3 || !isdigit(argv[1]) || !isdigit(argv[2]))
+	{
+		printf("Error\n");
+		return (98);
+	}
 	else
-	printf("Error\n");
-        return (98);
-return (0);
+	{
+		long int *mul = malloc(atoi(argv[1]) * atoi(argv[2]));
+		printf("%ld\n", *mul);
+	}
+	return (0);
 }
