@@ -1,5 +1,6 @@
 /**
- * C program to print first 89 Fibonacci numbers
+ * printFibonacciNumbers - C program to print first 89 Fibonacci numbers
+ *@n: fibonacci number to stop at
  *
  * Return: fibonacci series
  */
@@ -16,7 +17,7 @@ void printFibonacciNumbers(int n)
 		x = y;
 		y = z;
 		printf("%d", x);
-		if(x < n)
+		if (x < n)
 		printf(", ");
 
 	}
@@ -24,8 +25,14 @@ void printFibonacciNumbers(int n)
 	printf("\n");
 }
 
-int main()
+/**
+ * main - program entry
+ *
+ * Return: return 0
+ */
+
+int main(void)
 {
 printFibonacciNumbers(89);
-return 0;
+return (0);
 }
