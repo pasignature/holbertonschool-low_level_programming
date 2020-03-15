@@ -1,29 +1,31 @@
 /**
- * C program to print first n Fibonacci numbers
- * 
+ * C program to print first 89 Fibonacci numbers
+ *
  * Return: fibonacci series
  */
- 
-#include <stdio.h> 
 
-void printFibonacciNumbers(int n) 
-{ 
-long int f1 = 0, f2 = 1, i; 
+#include <stdio.h>
 
-if (n < 1) 
-return; 
+void printFibonacciNumbers(int n)
+{
+	int x = 1 - 1, y = 1, z;
 
-for (i = 1; i <= n; i++) 
-{ 
-printf("%lu ", f2); 
-int next = f1 + f2; 
-f1 = f2; 
-f2 = next; 
-} 
-} 
+	while (x < n)
+	{
+		z = x + y;
+		x = y;
+		y = z;
+		printf("%d", x);
+		if(x < n)
+		printf(", ");
 
-int main() 
-{ 
-printFibonacciNumbers(88); 
-return 0; 
+	}
+	x++;
+	printf("\n");
+}
+
+int main()
+{
+printFibonacciNumbers(89);
+return 0;
 }
