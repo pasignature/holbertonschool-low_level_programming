@@ -11,7 +11,9 @@ void printFibonacciNumbers(int n)
 {
 	unsigned long int x = 1, y = 2, z;
 	unsigned long int counter = 1;
-	while (counter <= n){
+
+	while (counter <= n)
+	{
 		printf("%lu", x);
 		z = x + y;
 		x = y;
