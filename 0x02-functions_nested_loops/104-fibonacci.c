@@ -9,20 +9,19 @@
 
 void printFibonacciNumbers(int n)
 {
-	int x = 1 - 1, y = 1, z;
-
-	while (x < n)
-	{
+	unsigned long int x = 1, y = 2, z;
+	unsigned long int counter = 1;
+	while (counter <= n){
+		printf("%lu", x);
 		z = x + y;
 		x = y;
 		y = z;
-		printf("%d", x);
-		if (x < n)
+		if (counter < n)
 		printf(", ");
-
+		counter++;
 	}
-	x++;
-	printf("\n");
+
+		printf("\n");
 }
 
 /**
@@ -33,6 +32,6 @@ void printFibonacciNumbers(int n)
 
 int main(void)
 {
-printFibonacciNumbers(89);
+printFibonacciNumbers(98);
 return (0);
 }
