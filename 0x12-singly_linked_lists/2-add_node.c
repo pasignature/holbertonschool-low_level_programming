@@ -12,7 +12,8 @@ unsigned int _strlen(const char *s)
 {
 	unsigned int i;
 
-	for (i = 0; s[i] != '\0'; i++);
+	for (i = 0; s[i] != '\0'; i++)
+	;
 	return (i);
 }
 
@@ -23,6 +24,7 @@ unsigned int _strlen(const char *s)
  *
  * Return: address of new element, or NULL if it fails
  */
+
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
