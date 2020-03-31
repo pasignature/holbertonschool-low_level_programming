@@ -6,57 +6,37 @@
 #include "holberton.h"
 
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output
- * @filename: name of text file
- * @letters: number of letters it should read and print
- *
- * Return: actual number of letters it read and printed
- * 0 if file cannot be open or read or if filename is NULL
- * or if write fails or does not write the expected amount of bytes
+ * read_textfile - function to read and write a file
+ * @filename: const char type pointer to file to be read
+ * @letters: size_t type
+ * Return: always successful
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t r, w;
-	char *buf;
+	ssize_t fdread, fdwrite, fdclose;
+	char *space;
 
-	if (!filename)
+	if (filename == NULL)
 		return (0);
+	space = malloc(sizeof(char) * letters);
+	if (space == NULL)
+	{
+		return (-1);
+	}
 
-	/* opens file with read + write permissions and checks for error */
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
+	fdread = read(fd, space, letters);
+	if (fdread == -1)
+		return (-1);
+	fdwrite = write(STDOUT_FILENO, space, fdread);
 
-	/* allocates buffer of size letters and checks for error */
-	buf = malloc(letters * sizeof(char));
-	if (!buf)
-		return (0);
-
-	/* reads text into buffer from file and checks for error */
-	r = read(fd, buf, letters);
-	if (r == -1)
-	{
-		free(buf);
-		return (0);
-	}
-
-	close(fd);
-
-	/* write to stdout from buffer and checks for error */
-	w = write(STDOUT_FILENO, buf, r);
-	if (w == -1)
-	{
-		free(buf);
-		return (0);
-	}
-
-	/* checks if write wrote the expected amount of bytes */
-	if (w < r)
-	{
-		free(buf);
-		return (0);
-	}
-	free(buf);
-	return (w);
+	if (fdwrite == -1)
+		return (-1);
+	fdclose = close(fd);
+	if (fdclose == -1)
+		return (-1);
+	return (fdread);
 }
