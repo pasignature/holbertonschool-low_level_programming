@@ -3,3 +3,5 @@
 0x00. C - Hello, World
 
 Learning The awesome C programming language at awesome Holberton School, Tunis Campus.
+
+By Andrew Godwin
