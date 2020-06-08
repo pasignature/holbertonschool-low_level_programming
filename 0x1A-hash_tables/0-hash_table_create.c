@@ -28,5 +28,5 @@ hash_table_t *hash_table_create(unsigned long int size)
   hts = ht;
   free(array);
   free(ht);
-  return (ht);
+  return (hts);
 }
