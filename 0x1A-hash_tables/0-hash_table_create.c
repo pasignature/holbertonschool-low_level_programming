@@ -21,10 +21,11 @@ hash_table_t *hash_table_create(unsigned long int size)
     return (NULL);
 
   for (count = 0; count < size; count++)
-    array[count] = NULL;
-
+    {
+      array[count] = NULL;
+    }
   h_table->array = array;
-  free(h_table);
   free(array);
+  free(h_table);
   return (h_table);
 }
