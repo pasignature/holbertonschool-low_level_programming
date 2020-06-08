@@ -4,22 +4,22 @@
 
 /**
  * hash_table_set - adds a new value to the hash table
- * @ht: hash table
+ * @h_table: hash table
  * @key: key
  * @value: value
  * Return: 1 on success, 0 if failed
  */
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+int hash_table_set(hash_table_t *h_table, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *new_node = 0, *idx_node = 0;
 
-	if (!strlen(key) || !ht)
+	if (!strlen(key) || !h_table)
 		return (0);
 
-	index = key_index((const unsigned char *)key, ht->size);
+	index = key_index((const unsigned char *)key, h_table->size);
 
-	idx_node = (ht->array)[index];
+	idx_node = (h_table->array)[index];
 
 	if (idx_node && !strcmp(idx_node->key, key))
 	{
@@ -35,7 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
 
-	(ht->array)[index] = new_node;
+	(h_table->array)[index] = new_node;
 	new_node->next = idx_node;
 	return (1);
 }
