@@ -2,29 +2,30 @@
 #include <string.h>
 
 /**
- * hash_table_get - function to retrieve value at key
- * @ht: is the hash table
- * @key: is the key being searched
- * Return: associated value if found or NULL if not
+ * hash_table_get - returns the value of a key
+ * @ht: hash table
+ * @key: key
+ * Return: value
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int index = 0;
+	unsigned long int idx;
+	hash_node_t *node = 0;
 
-	if (!ht || !ht->array || !key || strlen(key) == 0)
+	if (!ht)
 		return (0);
-	index = key_index((const unsigned char *) key, ht->size);
-	if (ht->array[index] == NULL)
-		return (NULL);
-	while (index < ht->size)
+
+	idx = key_index((const unsigned char *)key, ht->size);
+	node = (ht->array)[idx];
+
+	if (!node)
+		return (0);
+
+	while (node)
 	{
-		while (ht->array[index])
-		{
-			if (strcmp(ht->array[index]->key, key) == 0)
-				return (ht->array[index]->value);
-			ht->array[index] = ht->array[index]->next;
-		}
-		index++;
+		if (!strcmp(node->key, key))
+			return (node->value);
+		node = node->next;
 	}
-	return (NULL);
+	return (0);
 }
