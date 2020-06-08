@@ -6,11 +6,10 @@
  * @ht: hash table to be printed
  * Return: printed elements of hash table
  */
-
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int i = 0;
 	int counter = 0;
+	unsigned long int i = 0;
 
 	if (!ht)
 		return;
@@ -19,6 +18,7 @@ void hash_table_print(const hash_table_t *ht)
 	for (i = 0; i < ht->size; i++)
 	{
 		hash_node_t *ht_node = (ht->array)[i];
+
 		if (ht_node)
 		{
 			while (ht_node)
