@@ -1,0 +1,9 @@
+#setting variables
+SRC=main.c holberton.c
+OBJ=$(SRC:.c=.o)
+CC=gcc
+NAME=holberton
+
+#creating the rules
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
