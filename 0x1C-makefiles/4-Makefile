@@ -1,0 +1,23 @@
+#setting variables
+NAME=holberton
+CC=gcc
+RM=rm -f
+OBJ=$(SRC:.c=.o)
+CFLAGS=-Wall -Werror -Wextra -pedantic
+SRC=main.c holberton.c
+
+#creating the rules
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean:
+	$(RM) *~ $(NAME)
+	$(RM) $(OBJ)
+
+re: oclean all
