@@ -1,0 +1,9 @@
+#variable - the compiler to be used
+CC=gcc
+
+#variable the .c source files
+SRC=main.c holberton.c
+
+#the rules
+all: $(SRC)
+	$(CC) $(SRC) -o holberton
