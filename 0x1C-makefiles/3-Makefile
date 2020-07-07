@@ -1,0 +1,22 @@
+#setting variables
+NAME=holberton
+CC=gcc
+SRC=main.c holberton.c
+RM=rm -f
+OBJ=$(SRC:.c=.o)
+
+#creating the rules
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean:
+	$(RM) *~ $(NAME)
+	$(RM) $(OBJ)
+
+re: oclean all
